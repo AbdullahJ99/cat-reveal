@@ -3,6 +3,13 @@ var button = document.querySelector(".show-cat");
 var cat = document.querySelector(".cat");
 //console.log(cat);
 button.addEventListener("click", function(){
-    //console.log("It's working!")
-    cat.classList.add("show");
+    if(cat.classList.contains("show")){
+        cat.classList.remove("show");
+        button.classList.add("disappear");
+        button.innerText = "Wait, come back!";
+    } else{
+        cat.classList.add("show");
+        button.classList.remove("disappear");
+        button.innerText = "Shoo, cat!";
+    }
 });
